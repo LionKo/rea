@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: Sync main with upstream
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.FORK_SYNC_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: gh api --method POST "repos/$GH_REPO/merge-upstream" -f branch=main
